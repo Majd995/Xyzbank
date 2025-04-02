@@ -18,8 +18,8 @@ public class TestCasess {
 	WebDriver driver = new ChromeDriver();
 	String website = "https://globalsqa.com/angularJs-protractor/BankingProject/#/login";
 	Random rand = new Random();
-	private int customerID;
-	private int accountNumber;
+	 int customerID;
+	 int accountNumber;
 
 	@BeforeTest
 
