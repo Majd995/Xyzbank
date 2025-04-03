@@ -5,7 +5,8 @@
     <classes>
       <class name="TestCasess">
         <methods>
-          <include name="OpenAccount"/>
+          <include name="withdrawl"/>
+          <include name="transactions"/>
           <include name="setup"/>
         </methods>
       </class> <!-- TestCasess -->

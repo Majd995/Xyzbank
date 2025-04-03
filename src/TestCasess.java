@@ -18,8 +18,8 @@ public class TestCasess {
 	WebDriver driver = new ChromeDriver();
 	String website = "https://globalsqa.com/angularJs-protractor/BankingProject/#/login";
 	Random rand = new Random();
-	 int customerID;
-	 int accountNumber;
+	int customerID;
+	int accountNumber;
 
 	@BeforeTest
 
@@ -29,7 +29,7 @@ public class TestCasess {
 
 	}
 
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1, enabled = true)
 	public void secondst() throws InterruptedException {
 		Thread.sleep(4000);
 		WebElement customerbtn = driver.findElement(By.cssSelector(".btn.btn-primary.btn-lg"));
@@ -38,7 +38,7 @@ public class TestCasess {
 		Thread.sleep(2000);
 	}
 
-	@Test(priority = 2, enabled = false)
+	@Test(priority = 2, enabled = true)
 	public void selestname() throws InterruptedException {
 		WebElement nameselct = driver.findElement(By.id("userSelect"));
 
@@ -53,7 +53,7 @@ public class TestCasess {
 
 	}
 
-	@Test(priority = 3, enabled = false)
+	@Test(priority = 3, enabled = true)
 	public void deposit() throws InterruptedException {
 
 		Thread.sleep(3000);
@@ -83,7 +83,7 @@ public class TestCasess {
 
 	}
 
-	@Test(priority = 4, enabled = false)
+	@Test(priority = 4, enabled = true)
 
 	public void withdrawl() throws InterruptedException {
 
@@ -116,7 +116,7 @@ public class TestCasess {
 		Assert.assertEquals(ExpectedResult, ActualResult);
 	}
 
-	@Test(priority = 5, enabled = false)
+	@Test(priority = 5, enabled = true)
 
 	public void transactions() throws InterruptedException {
 
@@ -154,7 +154,7 @@ public class TestCasess {
 		Assert.assertEquals(actualBalance, Integer.parseInt(expectedBalanceText));
 	}
 
-	@Test(priority = 8, enabled = false)
+	@Test(priority = 6, enabled = true)
 
 	public void backToHome() throws InterruptedException {
 		Thread.sleep(3000);
@@ -162,7 +162,7 @@ public class TestCasess {
 		homeBtn.click();
 	}
 
-	@Test(priority = 9, enabled = true)
+	@Test(priority = 7, enabled = true)
 
 	public void Bankmangerl() throws InterruptedException {
 
@@ -175,7 +175,7 @@ public class TestCasess {
 		addcustmerl.click();
 	}
 
-	@Test(priority = 10, enabled = true)
+	@Test(priority = 8, enabled = true)
 
 	public void Addcustmer() throws InterruptedException {
 
@@ -205,7 +205,7 @@ public class TestCasess {
 
 	}
 
-	@Test(priority = 11, enabled = true)
+	@Test(priority = 9, enabled = true)
 	public void OpenAccount() throws InterruptedException {
 
 		Thread.sleep(3000);
@@ -232,7 +232,7 @@ public class TestCasess {
 		Thread.sleep(3000);
 
 		Alert navigate2alert = driver.switchTo().alert();
-		Integer.parseInt(navigate2alert.getText().split(":")[1]);
+		accountNumber=Integer.parseInt(navigate2alert.getText().split(":")[1]);
 		navigate2alert.accept();
 
 	}
@@ -249,5 +249,14 @@ public class TestCasess {
 		WebElement searchField = driver.findElement(By.cssSelector("[ng-model=\"searchCustomer\"]"));
 		searchField.sendKeys(accountNumber + "");
 		WebElement deleteBtn = driver.findElement(By.cssSelector("[ng-click=\"deleteCust(cust)\"]"));
-		deleteBtn.click();}
+		deleteBtn.click();
+	}
+
+	@Test(priority = 11, enabled = true)
+
+	public void Homepage() throws InterruptedException {
+		Thread.sleep(3000);
+		WebElement homeBtn = driver.findElement(By.className("home"));
+		homeBtn.click();
+	}
 }
